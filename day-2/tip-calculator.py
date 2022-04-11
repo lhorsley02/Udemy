@@ -8,27 +8,15 @@
 #Write your code below this line 👇
 
 print("Welcome to the tip calculator!")
-total_inp = input("What was to total bill?\n$")
-tip_inp = input("How much tip would you like to give? 10%, 12%, or 15%?\n%")
-people_inp = input("How many people to split the bill?\n")
+bill = float(input("What was to total bill?\n$"))
+tip= int(input("How much tip would you like to give? 10%, 12%, or 15%?\n"))
+people = int(input("How many people to split the bill?\n"))
 
-# Total should be divided by people_inp, then multiplied by tip_inp to show total for each person
-# Create variables for nums
+#Calculations
 
-total = float(total_inp)
-tip = float(tip_inp)
-people = int(people_inp)
+bill_with_tip = tip / 100 * bill + bill
 
-# first tip should be calculated, tip / 100 then multiplied by total_inp
-tip_calc = tip / 100
-tip_final = tip_calc * total
+bill_per_person = bill_with_tip / people
 
-# Calculate final bill
-final_bill = total + tip_final
-
-# Divide among people
-per_person = final_bill / people
-
-# Print total per person
-should_print = (round(per_person, 3))
-print(f"Each person should pay: ${should_print}")
+total = round(bill_per_person, 2)
+print(f"Each person should pay: ${total}")
