@@ -3,7 +3,8 @@ from art import logo
 #HINT: You can call clear() to clear the output in the console.
 print(logo)
 
-clearConsole = lambda: print('\n' * 150)
+def clear_console():
+    os.system('cls')
 
 
 
@@ -32,5 +33,5 @@ while not bidding_finished:
     bidding_finished = True
     highest_bidder(bids)
   elif more_bids == "yes":
-    clearConsole()
+    clear_console()
   
